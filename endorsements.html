@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endorsements | Gonzales Teachers Association</title>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --pine:#2B4735;
+  --pine-dark:#1E3327;
+  --pine-mid:#355842;
+  --gold:#D79A2C;
+  --gold-dark:#9A6A12;
+  --rust:#A14B32;
+  --paper:#FBF8F2;
+  --cream:#F6F1E7;
+  --ink:#1C1A17;
+  --muted:#5F665D;
+  --line:rgba(30,51,39,0.16);
+  --shadow:rgba(30,51,39,0.14);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{
+  font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight:600;
+  color:var(--pine-dark);
+  line-height:1.15;
+  margin:0 0 0.4em;
+}
+a{color:var(--pine-dark); text-underline-offset:3px;}
+a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+.wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+/* Header with hamburger menu */
+.site-header{background:var(--pine-dark); border-bottom:4px solid var(--gold); position:sticky; top:0; z-index:100;}
+.header-inner{max-width:1080px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:16px;}
+.brand{color:var(--cream); text-decoration:none; display:block; min-width:0;}
+.brand .kicker{font-size:12.5px; letter-spacing:0.03em; color:var(--gold); margin:0 0 1px;}
+.brand .brand-title{display:block; font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:25px; line-height:1.12; color:var(--cream);}
+
+.menu-button{
+  display:none; align-items:center; gap:10px; flex:none;
+  background:transparent; color:var(--cream); cursor:pointer;
+  border:1px solid rgba(246,241,231,0.4); border-radius:3px;
+  height:44px; padding:0 14px; font:inherit; font-size:15px; font-weight:600;
+}
+.js .menu-button{display:inline-flex;}
+.menu-button:hover{border-color:var(--gold); color:#fff;}
+.bars{display:block; width:22px; height:16px; position:relative;}
+.bars span{position:absolute; left:0; width:100%; height:2.5px; background:currentColor; border-radius:2px; transition:transform .2s, opacity .2s, top .2s;}
+.bars span:nth-child(1){top:0;}
+.bars span:nth-child(2){top:6.75px;}
+.bars span:nth-child(3){top:13.5px;}
+.menu-open .bars span:nth-child(1){top:6.75px; transform:rotate(45deg);}
+.menu-open .bars span:nth-child(2){opacity:0;}
+.menu-open .bars span:nth-child(3){top:6.75px; transform:rotate(-45deg);}
+
+/* Without JavaScript the links just sit under the header as small tabs */
+nav.main-nav{background:var(--pine-dark);}
+nav.main-nav .menu-inner{display:flex; flex-wrap:wrap; gap:8px 10px; max-width:1080px; margin:0 auto; padding:0 28px 14px;}
+nav.main-nav a{color:rgba(246,241,231,0.92); text-decoration:none; font-size:13.5px; font-weight:500; padding:5px 10px; border:1px solid rgba(246,241,231,0.3); border-radius:3px;}
+nav.main-nav a[aria-current="page"]{color:var(--gold); font-weight:600;}
+
+/* With JavaScript the links live in a dropdown under the Menu button */
+.js nav.main-nav{
+  display:none; position:absolute; top:calc(100% + 4px);
+  right:max(12px, calc((100vw - 1080px) / 2 + 28px));
+  width:340px; max-width:calc(100vw - 24px);
+  border-top:3px solid var(--gold); box-shadow:0 14px 30px rgba(0,0,0,0.35);
+}
+.js .menu-open nav.main-nav{display:block;}
+.js nav.main-nav .menu-inner{display:block; padding:6px 0;}
+.js nav.main-nav a{display:block; border:none; border-radius:0; padding:13px 22px; font-size:16.5px; border-bottom:1px solid rgba(246,241,231,0.12);}
+.js nav.main-nav a:last-child{border-bottom:none;}
+.js nav.main-nav a:hover{background:rgba(255,255,255,0.08); color:#fff;}
+.js nav.main-nav a[aria-current="page"]{color:var(--gold); font-weight:600; background:rgba(215,154,44,0.1);}
+
+/* Hero (home) and page banners, with a simple valley-hills drawing */
+.hero, .banner{background:var(--pine); position:relative; overflow:hidden; color:var(--cream);}
+.hero-inner{max-width:1080px; margin:0 auto; padding:56px 28px 130px; position:relative; z-index:2;}
+.banner-inner{max-width:1080px; margin:0 auto; padding:38px 28px 92px; position:relative; z-index:2;}
+.hero .label{font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin:0 0 12px;}
+.hero .mission{font-family:'Fraunces', Georgia, serif; font-size:26px; line-height:1.38; font-weight:400; max-width:720px; margin:0;}
+@media (min-width:761px){
+  .hero .mission{max-width:min(720px, calc(100% - 230px));}
+}
+.banner h2{font-size:40px; color:var(--cream); margin:0 0 8px;}
+.banner .lede{color:rgba(246,241,231,0.86); font-size:19px; max-width:640px; margin:0;}
+.hills{position:absolute; left:0; bottom:-1px; width:100%; display:block; z-index:1;}
+.hero .hills{height:200px;}
+.banner .hills{height:96px;}
+.sun{position:absolute; border-radius:50%; background:var(--gold); z-index:0;}
+.hero .sun{width:130px; height:130px; right:11%; bottom:78px;}
+.banner .sun{width:76px; height:76px; right:9%; bottom:46px;}
+
+/* Page body */
+.content{padding-top:36px; padding-bottom:12px;}
+.content.home{padding-top:0;}
+
+section{margin-bottom:36px;}
+section h2{font-size:27px; position:relative; padding-bottom:12px; margin-bottom:20px;}
+section h2::after{content:""; position:absolute; left:0; bottom:0; width:46px; height:3px; background:var(--gold);}
+.placeholder-note{color:var(--muted); font-size:15px; font-style:italic; margin:-6px 0 16px;}
+
+/* Shared "paper card" look: square-ish, with a hard offset shadow like a printed flyer */
+.vision, .committee, .resource, .officer, ul.notices li, .link-out, .tile{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:3px;
+  box-shadow:3px 3px 0 var(--shadow);
+}
+.cards{display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;}
+.cards.three{grid-template-columns:repeat(3, 1fr);}
+.section-intro{margin:-6px 0 18px; color:var(--muted); font-size:17px;}
+
+/* Endorsement cards */
+.endorse{background:#fff; border:1px solid var(--line); border-top:4px solid var(--gold); border-radius:3px; box-shadow:3px 3px 0 var(--shadow); padding:20px 22px 24px;}
+.endorse .race{margin:6px 0 4px; font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dark);}
+.endorse h3{font-size:22px; margin:0 0 8px;}
+.endorse .why{margin:0; font-size:15.5px; color:#34312C;}
+
+/* Home */
+.vision{margin-top:-84px; position:relative; z-index:3; border-top:4px solid var(--gold); padding:24px 28px 26px; margin-bottom:40px;}
+.vision .label{font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dark); margin:0 0 8px;}
+.vision p.text{margin:0; font-size:19px; line-height:1.55; max-width:820px;}
+
+.tiles{display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;}
+.tile{display:block; text-decoration:none; color:var(--ink); padding:22px 20px 22px; transition:transform .15s, box-shadow .15s;}
+.tile:hover{transform:translate(-2px,-2px); box-shadow:5px 5px 0 var(--shadow);}
+.tile .icon{width:48px; height:48px; border-radius:4px; background:rgba(215,154,44,0.2); display:grid; place-items:center;}
+.tile .icon svg{width:27px; height:27px; stroke:var(--pine); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;}
+.tile h3{font-size:19px; margin:16px 0 5px; line-height:1.2;}
+.tile p{margin:0; font-size:15px; color:var(--muted); line-height:1.45;}
+
+/* Committees */
+.committee{padding:22px 24px 24px;}
+.committee h3{font-size:21px; margin-bottom:8px;}
+.committee .desc{margin:0 0 14px; font-size:15.5px; color:#34312C;}
+.committee .members-label{display:inline; margin:0 8px 0 0; font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dark);}
+.committee ul{display:inline; list-style:none; margin:0; padding:0;}
+.committee li{display:inline; font-weight:600; font-size:16px;}
+.committee li:not(:last-child)::after{content:", "; font-weight:400;}
+.committee .empty{margin:0; color:var(--muted); font-size:15px; font-style:italic;}
+
+/* Officers and reps */
+.officer{padding:18px 22px;}
+.officer .name{font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:19px; color:var(--pine-dark);}
+.officer .role{color:var(--muted); font-size:15px;}
+
+/* Documents and calendars */
+.resource{padding:20px 22px 20px 82px; position:relative;}
+.resource::before{
+  content:""; position:absolute; left:22px; top:21px; width:42px; height:42px; border-radius:4px;
+  background:rgba(215,154,44,0.2) center/25px no-repeat;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232B4735' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3h8l4 4v14H6z'/><path d='M14 3v4h4'/><path d='M9 12h6M9 15.5h6'/></svg>");
+}
+.resource h3{font-size:19px; margin-bottom:3px;}
+.resource a{color:var(--pine-dark); text-decoration-color:var(--gold); text-decoration-thickness:2px;}
+.resource a:hover{color:var(--rust);}
+.resource p{margin:3px 0 0; color:var(--muted); font-size:15px;}
+
+/* News */
+ul.notices{list-style:none; margin:0; padding:0; display:grid; gap:20px; box-shadow:none; border:none; background:none;}
+ul.notices li{padding:22px 26px;}
+.notice-date{display:block; font-size:13.5px; color:var(--muted); margin-bottom:6px;}
+.notice-title{font-family:'Fraunces', Georgia, serif; font-size:21px; font-weight:600; color:var(--pine-dark); line-height:1.25; margin:0 !important;}
+ul.notices li p{margin:8px 0 0; font-size:16.5px;}
+ul.notices li .notice-title{margin:0 !important;}
+.tag{display:inline-block; font-family:'IBM Plex Sans', system-ui, sans-serif; font-size:11.5px; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:1px 8px; border:2px solid currentColor; border-radius:2px; margin-right:10px; vertical-align:2px; color:var(--pine);}
+.tag.urgent{color:var(--rust);}
+.tag.event{color:var(--gold-dark);}
+
+/* Link-out pages */
+.link-out{padding:34px 34px 36px; border-top:4px solid var(--gold); max-width:760px;}
+.link-out p{margin:0 0 22px; max-width:600px; font-size:18px;}
+.button{display:inline-block; background:var(--pine); color:var(--cream); text-decoration:none; padding:13px 24px; border-radius:3px; border-bottom:3px solid var(--gold); font-weight:600; font-size:15.5px;}
+.button:hover{background:var(--pine-dark); color:#fff;}
+
+footer.site-footer{background:var(--pine-dark); color:rgba(246,241,231,0.78); margin-top:50px; border-top:4px solid var(--gold);}
+.footer-inner{max-width:1080px; margin:0 auto; padding:28px; font-size:14.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 24px;}
+.footer-inner a{color:rgba(246,241,231,0.95);}
+
+@media (max-width:980px){
+  .tiles{grid-template-columns:repeat(2, 1fr);}
+  .cards.three{grid-template-columns:repeat(2, 1fr);}
+}
+@media (max-width:760px){
+  .cards, .cards.three{grid-template-columns:1fr;}
+  .hero .mission{font-size:22px;}
+  .hero-inner{padding:40px 22px 172px;}
+  .banner-inner{padding:30px 22px 84px;}
+  .banner h2{font-size:32px;}
+  .wrap, .header-inner{padding-left:22px; padding-right:22px;}
+  .hero .sun{width:90px; height:90px; right:8%; bottom:58px;}
+  .vision{margin-top:-70px; padding:20px 22px;}
+  .brand .brand-title{font-size:24px;}
+}
+@media (max-width:520px){
+  .tiles{grid-template-columns:1fr;}
+  .resource{padding-left:76px;}
+}
+
+/* Home page extras */
+.split{display:grid; grid-template-columns:1fr 1.5fr; gap:32px; align-items:start;}
+.split ul.notices li{padding:18px 22px;}
+.meeting{background:#fff; border:1px solid var(--line); border-radius:3px; box-shadow:3px 3px 0 var(--shadow); padding:16px 20px; margin-bottom:14px;}
+.meeting .what{font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:19px; color:var(--pine-dark); margin:0;}
+.meeting .when{margin:2px 0 0; color:var(--muted); font-size:15.5px;}
+.more{display:inline-block; margin-top:6px; font-weight:600; color:var(--pine-dark); text-decoration-color:var(--gold); text-decoration-thickness:2px;}
+.more:hover{color:var(--rust);}
+
+.committee-list{list-style:none; margin:0; padding:0; columns:3; column-gap:32px;}
+.committee-list li{break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--line);}
+.committee-list a{color:var(--ink); text-decoration:none; font-weight:500; font-size:16.5px; line-height:1.3;}
+.committee-list a::before{content:""; display:inline-block; width:8px; height:8px; background:var(--gold); margin-right:10px; border-radius:1px; vertical-align:1px;}
+.committee-list a:hover{color:var(--rust);}
+
+.committee{scroll-margin-top:100px;}
+
+@media (max-width:980px){
+  .committee-list{columns:2;}
+}
+@media (max-width:860px){
+  .split{grid-template-columns:1fr; gap:8px;}
+}
+@media (max-width:560px){
+  .committee-list{columns:1;}
+  .js nav.main-nav{left:12px; right:12px; width:auto;}
+  .brand .brand-title{font-size:20px;}
+  .brand .kicker{font-size:11.5px;}
+  .header-inner{padding:12px 18px;}
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <p class="kicker">Gonzales Unified School District</p>
+      <span class="brand-title">Gonzales Teachers Association</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="menu-label">Menu</span>
+    </button>
+  </div>
+  <nav id="site-menu" class="main-nav" aria-label="Primary">
+    <div class="menu-inner">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="committees.html">Committees</a>
+        <a href="salary-contract.html">Salary Schedule & Contract</a>
+        <a href="bylaws.html">Bylaws & Standing Rules</a>
+        <a href="benefits.html">CTA Member Benefits</a>
+        <a href="calendars.html">Calendars</a>
+        <a href="news.html">News</a>
+        <a href="endorsements.html" aria-current="page">Endorsements</a>
+    </div>
+  </nav>
+</header>
+<div class="banner">
+  <div class="sun"></div>
+  <div class="banner-inner">
+    <h2>Endorsements</h2>
+    <p class="lede">Candidates and measures the Gonzales Teachers Association is endorsing for the November 3, 2026 election.</p>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M0 150 C150 100 300 135 450 118 C650 96 800 152 1000 122 C1100 108 1160 122 1200 132 L1200 240 L0 240Z" fill="#355842"/>
+  <path d="M0 192 C200 150 380 198 600 170 C800 148 1000 192 1200 165 L1200 240 L0 240Z" fill="#274030"/>
+  <g fill="none" stroke="#D79A2C" stroke-opacity="0.3" stroke-width="1.6">
+    <path d="M0 204 C200 162 380 210 600 182 C800 160 1000 204 1200 177"/>
+    <path d="M0 214 C200 172 380 220 600 192 C800 170 1000 214 1200 187"/>
+    <path d="M0 224 C200 182 380 230 600 202 C800 180 1000 224 1200 197"/>
+  </g>
+  <path d="M0 226 C250 204 450 232 700 214 C900 200 1050 224 1200 210 L1200 240 L0 240Z" fill="#1E3327"/>
+</svg>
+</div>
+<main class="wrap content">
+
+  <section>
+    <h2>Candidates</h2>
+    <p class="placeholder-note">Replace the bracketed text with your endorsements. Delete any card you don't need, or copy one to add more.</p>
+    <div class="cards three">
+      <div class="endorse">
+        <span class="tag">Endorsed</span>
+        <p class="race">[Office or race]</p>
+        <h3>[Candidate name]</h3>
+        <p class="why">[One or two sentences on why the association is endorsing this candidate.]</p>
+      </div>
+      <div class="endorse">
+        <span class="tag">Endorsed</span>
+        <p class="race">[Office or race]</p>
+        <h3>[Candidate name]</h3>
+        <p class="why">[One or two sentences on why the association is endorsing this candidate.]</p>
+      </div>
+      <div class="endorse">
+        <span class="tag">Endorsed</span>
+        <p class="race">[Office or race]</p>
+        <h3>[Candidate name]</h3>
+        <p class="why">[One or two sentences on why the association is endorsing this candidate.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ballot measures</h2>
+    <div class="cards">
+      <div class="endorse">
+        <span class="tag">[Yes / No]</span>
+        <p class="race">[Measure name or letter]</p>
+        <h3>[Short title of the measure]</h3>
+        <p class="why">[One or two sentences on the association's position and why.]</p>
+      </div>
+      <div class="endorse">
+        <span class="tag">[Yes / No]</span>
+        <p class="race">[Measure name or letter]</p>
+        <h3>[Short title of the measure]</h3>
+        <p class="why">[One or two sentences on the association's position and why.]</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>Gonzales Teachers Association, Gonzales, California</div>
+    <div>Questions about the site? See the <a href="about.html">About Us</a> page.</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  var button = header.querySelector('.menu-button');
+  var label = button.querySelector('.menu-label');
+  function setOpen(open) {
+    header.classList.toggle('menu-open', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    label.textContent = open ? 'Close' : 'Menu';
+  }
+  button.addEventListener('click', function () { setOpen(!header.classList.contains('menu-open')); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && header.classList.contains('menu-open')) { setOpen(false); button.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!header.contains(e.target)) setOpen(false);
+  });
+})();
+</script>
+</body>
+</html>
